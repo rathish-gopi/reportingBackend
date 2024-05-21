@@ -41,9 +41,12 @@ public class SubmissionController {
 		return "public API";
 	}
 	
+	
 	@GetMapping("/getDetails")
-	public String fetchSubmissions(){
-		return "";
+	@CrossOrigin(origins= "http://localhost:3000")
+	public ResponseEntity<List<Submission>> fetchSubmissions(){
+		List<Submission> getResults = submissionService.getDetails();
+		return new ResponseEntity<>(getResults, HttpStatus.OK);
 	}
 
 }

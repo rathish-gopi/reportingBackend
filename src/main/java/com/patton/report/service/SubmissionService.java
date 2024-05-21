@@ -19,4 +19,10 @@ public class SubmissionService {
 		listSubmissions.stream().forEach(sub -> submissionRepository.save(sub));
 	}
 
+	public List<Submission> getDetails() {
+		// TODO Auto-generated method stub
+		List<Submission> fetchResults = submissionRepository.findAll();
+		return fetchResults;
+	}
+
 }
